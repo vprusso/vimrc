@@ -1,3 +1,16 @@
+" set runtimepath+=~/.vim_runtime
+" 
+" source ~/.vim_runtime/vimrcs/basic.vim
+" source ~/.vim_runtime/vimrcs/filetypes.vim
+" source ~/.vim_runtime/vimrcs/plugins_config.vim
+" source ~/.vim_runtime/vimrcs/extended.vim
+" 
+" try
+" source ~/.vim_runtime/my_configs.vim
+" catch
+" endtry
+
+
 " Fisa-vim-config
 " http://fisadev.github.io/fisa-vim-config/
 " version: 8.3.1
@@ -464,3 +477,5 @@ set background=dark
 colorscheme railscasts
 autocmd VimEnter * NERDTree
 au BufNewFile,BufRead *.sage setf python
+autocmd BufWinEnter * NERDTreeMirror
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
