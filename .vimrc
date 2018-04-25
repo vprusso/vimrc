@@ -31,6 +31,9 @@ Plugin 'VundleVim/Vundle.vim'
 " different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
 
+
+Plugin 'dart-lang/dart-vim-plugin' 
+
 " All of your Plugins must be added before the following line
 Plugin 'jpo/vim-railscasts-theme'
 call vundle#end()            " required
@@ -208,6 +211,8 @@ set nofoldenable
 
 " show line numbers
 set nu
+set relativenumber
+
 
 " tab navigation mappings
 map tn :tabn<CR>
@@ -462,5 +467,12 @@ let g:airline#extensions#whitespace#enabled = 0
 " Colorscheme
 set background=dark
 colorscheme railscasts
-autocmd VimEnter * NERDTree
+" Set python color scheme for SAGE files:
 au BufNewFile,BufRead *.sage setf python
+
+"Autoload NERDTree on startup:
+"autocmd VimEnter * NERDTree
+"autocmd BufWinEnter * NERDTreeMirror
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+
