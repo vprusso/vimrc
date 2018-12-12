@@ -13,6 +13,8 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'lifepillar/vim-solarized8'
+
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -30,9 +32,7 @@ Plugin 'VundleVim/Vundle.vim'
 " Install L9 and avoid a Naming conflict if you've already installed a
 " different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
-
-
-Plugin 'dart-lang/dart-vim-plugin' 
+Plugin 'dart-lang/dart-vim-plugin'
 
 " All of your Plugins must be added before the following line
 Plugin 'jpo/vim-railscasts-theme'
@@ -211,8 +211,6 @@ set nofoldenable
 
 " show line numbers
 set nu
-set relativenumber
-
 
 " tab navigation mappings
 map tn :tabn<CR>
@@ -467,12 +465,8 @@ let g:airline#extensions#whitespace#enabled = 0
 " Colorscheme
 set background=dark
 colorscheme railscasts
-" Set python color scheme for SAGE files:
+"autocmd VimEnter * NERDTree
 au BufNewFile,BufRead *.sage setf python
 
-"Autoload NERDTree on startup:
-"autocmd VimEnter * NERDTree
-"autocmd BufWinEnter * NERDTreeMirror
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-
-
+highlight clear
+colorscheme solarized8
